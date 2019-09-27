@@ -41,7 +41,8 @@
     "build:languages": "cross-env BABEL_ENV=commonjs NODE_ENV=languages-development env-cmd ./hot.config.js webpack",
     "build:languages.min": "cross-env BABEL_ENV=commonjs NODE_ENV=languages-production env-cmd ./hot.config.js webpack",
     "watch": "cross-env BABEL_ENV=commonjs NODE_ENV=watch env-cmd ./hot.config.js webpack --hide-modules --watch src/index.js",
-    "prepublish": "npm run clean && npm run build:commonjs && npm run build:es"
+    "prepublish": "npm run clean && npm run build:commonjs && npm run build:es",
+    "demo": "webpack-dev-server --config examples/webpack.config.js"
   },
   "keywords": [
     "data",
@@ -87,16 +88,17 @@
     "eslint": "^4.3.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "fs-extra": "^4.0.2",
     "glob": "^7.1.2",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.2.0",
     "jasmine-co": "^1.2.2",
     "jasmine-core": "2.5.2",
     "jasmine-terminal-reporter": "^1.0.3",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "loader-utils": "^1.1.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "on-build-webpack": "^0.1.0",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
     "progress-bar-webpack-plugin": "^1.10.0",
@@ -110,7 +112,9 @@
     "tree-kill": "^1.2.1",
     "typescript": "^2.4.2",
     "uglifyjs-webpack-plugin": "^1.3.0",
-    "webpack": "^3.5.6"
+    "webpack": "^4.40.0",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   },
   "license": "MIT",
   "resolutions": {

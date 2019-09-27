@@ -8,7 +8,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const configFactory = require('./base');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PACKAGE_FILENAME = process.env.HOT_FILENAME;
 
@@ -47,7 +47,9 @@ module.exports.create = function create(envArgs) {
       loader: path.resolve(__dirname, 'loader/empty-loader.js'),
     });
     c.plugins.push(
-      new ExtractTextPlugin(PACKAGE_FILENAME + '.css')
+      new MiniCssExtractPlugin({
+        filename: PACKAGE_FILENAME + '.css',
+      })
     );
   });
 
